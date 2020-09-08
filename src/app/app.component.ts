@@ -12,9 +12,13 @@ export class AppComponent {
   private list = new TodoList('Stu',
                 [new TodoItem('Go for run', true),
                  new TodoItem('Build an Angular project', true),
-                 new TodoItem('Be a well established full stack developer')]);
+                 new TodoItem('Build 100 Angular projects')]);
 
   get username(): string { return this.list.user; }
 
   get itemCount(): number { return this.list.items.filter(item => !item.complete).length; }
+
+  get items(): readonly TodoItem[] {
+    return this.list.items;
+  }
 }
