@@ -1,6 +1,6 @@
 <h3 class="bg-primary text-center text-white p-2">
   {{ username }}'s To Do List
-  <h6 class="mt-1 ">{{ itemCount }} Items</h6>
+  <h6 class="mt-1 ">{{ items.length }} {{ showComplete ? "" : "Incomplete" }} {{ items.length > 1 ? "Items" : "Item" }}</h6>
 </h3>
 <div class="container p-4">
   <div class="row">
@@ -20,11 +20,13 @@
         <td>{{ i + 1 }}</td>
         <td>{{ item.task }}</td>
         <td><input type="checkbox" [(ngModel)]="item.complete" /></td>
-        <td [ngSwitch]="item.complete">
-          <span *ngSwitchCase="true">Yes</span>
-          <span *ngSwitchDefault>No</span>
-        </td>
       </tr>
     </tbody>
   </table>
+</div>
+<div class="bg-secondary text-white text-center p-2">
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" [(ngModel)]="showComplete" />
+    <label class="form-check-label" for="defaultCheck1">Show Completed Tasks</label>
+  </div>
 </div>
