@@ -1,4 +1,6 @@
-# Todo
+# Todo - A Simple To Do List App
+
+Using **Angular** and **Bootstrap**
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.2.
 
