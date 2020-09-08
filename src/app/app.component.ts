@@ -21,4 +21,10 @@ export class AppComponent {
   get items(): readonly TodoItem[] {
     return this.list.items.filter(item => !item.complete);
   }
+
+  addItem(newItem) {
+    if (newItem !== '') {
+      this.list.addItem(newItem);
+    }
+  }
 }
