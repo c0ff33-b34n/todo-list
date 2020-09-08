@@ -16,9 +16,9 @@ export class AppComponent {
 
   get username(): string { return this.list.user; }
 
-  get itemCount(): number { return this.list.items.filter(item => !item.complete).length; }
+  get itemCount(): number { return this.list.items.length; }
 
   get items(): readonly TodoItem[] {
-    return this.list.items;
+    return this.list.items.filter(item => !item.complete);
   }
 }
